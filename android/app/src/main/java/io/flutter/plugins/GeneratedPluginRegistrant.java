@@ -1,12 +1,11 @@
 package io.flutter.plugins;
 
-import com.flutter_webview_plugin.FlutterWebviewPlugin;
-
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugins.connectivity.ConnectivityPlugin;
+import com.flutter_webview_plugin.FlutterWebviewPlugin;
+import io.github.ponnamkarthik.toast.fluttertoast.FluttertoastPlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin;
-import io.github.ponnamkarthik.toast.fluttertoast.FluttertoastPlugin;
 
 /**
  * Generated file. Do not edit.
