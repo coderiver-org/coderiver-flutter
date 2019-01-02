@@ -1,3 +1,4 @@
+import 'package:coderiver/ui/Application.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("CodeRiver"),
         ),
-        body: Text("Hello World"),
+        body: ApplicationPage(),
       )
     );
   }
