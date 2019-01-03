@@ -1,4 +1,5 @@
 import 'package:coderiver/ui/Application.dart';
+import 'package:coderiver/ui/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,16 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("CodeRiver"),
-        ),
-        body: ApplicationPage(),
+        body: LoginPage(),
       )
     );
   }

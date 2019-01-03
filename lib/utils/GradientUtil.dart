@@ -38,7 +38,7 @@ class GradientUtil {
           {begin = AlignmentDirectional.centerStart,
           end = AlignmentDirectional.centerEnd,
           opacity = 1.0}) =>
-      _getLinearGradient(YELLOW, BLUE,
+      _getLinearGradient(YELLOW, GREEN,
           begin: begin, end: end, opacity: opacity);
 
   static LinearGradient blue(
