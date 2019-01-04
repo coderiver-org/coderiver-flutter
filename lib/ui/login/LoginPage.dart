@@ -29,28 +29,7 @@ class _MarketPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              new Align(
-                alignment: FractionalOffset.topRight,
-                child: new Padding(
-                  padding: EdgeInsets.only(right: 0.0, top: 0.0),
-                  child: new GestureDetector(
-                    child: new Text(
-                      '登录',
-                      style: new TextStyle(
-                          fontSize: 18.0,
-                          color: Colors.white,
-                          fontStyle: FontStyle.normal),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  new LoginPage()));
-                    },
-                  ),
-                ),
-              ),
+              _logText(BuildContext),
               Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
                   child: new Image.asset(
@@ -68,32 +47,8 @@ class _MarketPageState extends State<LoginPage> {
                       fontStyle: FontStyle.normal),
                 ),
               ),
-              RaisedButton.icon(
-                  color: Colors.white,
-                  disabledColor: Colors.transparent,
-                  shape: new RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                  icon: new Icon(Icons.star),
-                  onPressed: () {
-                    Snack.show(context, "666");
-                  },
-                  label: new Text('使用GitHub账号登录使用GitHub账号登录')),
-              RaisedButton.icon(
-                  color: Colors.transparent,
-                  disabledColor: Colors.transparent,
-                  onPressed: () {
-                    Snack.show(context, "777");
-                  },
-                  shape: new RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                  icon: new Icon(null),
-                  label: new Text(
-                    '创建账号创建账号创建账号创建账号创建账号',
-                    style: new TextStyle(
-                        color: Colors.white, fontStyle: FontStyle.normal),
-                  )),
+              _btnGithubLogin(BuildContext),
+              _btnCreadeAccound(BuildContext),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
                 child: new Text(
@@ -108,27 +63,8 @@ class _MarketPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: RaisedButton.icon(
-                          color: Colors.white,
-                          disabledColor: Colors.transparent,
-                          icon: new Icon(Icons.star),
-                          label: new Text('新浪微博',
-                              style: new TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal)))),
-                  Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: RaisedButton.icon(
-                          color: Colors.transparent,
-                          disabledColor: Colors.transparent,
-                          icon: new Icon(Icons.star),
-                          label: new Text(
-                            '微信',
-                            style: new TextStyle(
-                                color: Colors.white,
-                                fontStyle: FontStyle.normal),
-                          ))),
+                      padding: EdgeInsets.all(10.0), child: weiboOR('新浪微博')),
+                  Padding(padding: EdgeInsets.all(20.0), child: weiboOR('微信')),
                 ],
               )
               //_body(),
@@ -140,14 +76,65 @@ class _MarketPageState extends State<LoginPage> {
   }
 }
 
-Widget _buildLoginBtn(BuildContext context) {
-  return RaisedButton(
-      padding: const EdgeInsets.all(8.0),
-      color: GlobalConfig.colorPrimary,
-      textColor: Colors.white,
-      child: Text("登录"),
-      elevation: 4.0,
+Widget _logText(context) {
+  return new Align(
+    alignment: FractionalOffset.topRight,
+    child: new Padding(
+      padding: EdgeInsets.only(right: 0.0, top: 0.0),
+      child: new GestureDetector(
+        child: new Text(
+          '登录',
+          style: new TextStyle(
+              fontSize: 18.0, color: Colors.white, fontStyle: FontStyle.normal),
+        ),
+        onTap: () {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (BuildContext context) => new LoginPage()));
+        },
+      ),
+    ),
+  );
+}
+
+Widget _btnGithubLogin(context) {
+  return RaisedButton.icon(
+      color: Colors.white,
+      disabledColor: Colors.transparent,
+      shape: new RoundedRectangleBorder(
+          side: BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.all(Radius.circular(50))),
+      icon: new Icon(Icons.star),
       onPressed: () {
-        Snack.show(context, "账号/密码不符合标准");
-      });
+        Snack.show(context, "666");
+      },
+      label: new Text('使用GitHub账号登录'));
+}
+
+Widget _btnCreadeAccound(context) {
+  return RaisedButton.icon(
+      color: Colors.transparent,
+      disabledColor: Colors.transparent,
+      onPressed: () {
+        Snack.show(context, "777");
+      },
+      shape: new RoundedRectangleBorder(
+          side: BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.all(Radius.circular(50))),
+      icon: new Icon(null),
+      label: new Text(
+        '创建账号',
+        style: new TextStyle(color: Colors.white, fontStyle: FontStyle.normal),
+      ));
+}
+
+Widget weiboOR(String str) {
+  return RaisedButton.icon(
+      color: Colors.white,
+      disabledColor: Colors.transparent,
+      icon: new Icon(Icons.star),
+      label: new Text(str,
+          style:
+              new TextStyle(color: Colors.white, fontStyle: FontStyle.normal)));
 }
