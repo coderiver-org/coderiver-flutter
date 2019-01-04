@@ -1,7 +1,7 @@
 import 'package:coderiver/common/GlobalConfig.dart';
+import 'package:coderiver/common/ShowToast.dart';
 import 'package:coderiver/common/Snack.dart';
 import 'package:coderiver/common/color_const.dart';
-import 'package:coderiver/ui/mine/MinePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +29,7 @@ class _MarketPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              _logText(BuildContext),
+              _logText(context),
               Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
                   child: new Image.asset(
@@ -38,7 +38,7 @@ class _MarketPageState extends State<LoginPage> {
                     height: 90,
                   )),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 20.0),
                 child: new Text(
                   '欢迎来到CodeRiver',
                   style: new TextStyle(
@@ -47,8 +47,8 @@ class _MarketPageState extends State<LoginPage> {
                       fontStyle: FontStyle.normal),
                 ),
               ),
-              _btnGithubLogin(BuildContext),
-              _btnCreadeAccound(BuildContext),
+              _btnGithubLogin(context),
+              _btnCreadeAccound(context),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
                 child: new Text(
@@ -99,34 +99,47 @@ Widget _logText(context) {
 }
 
 Widget _btnGithubLogin(context) {
-  return RaisedButton.icon(
-      color: Colors.white,
-      disabledColor: Colors.transparent,
-      shape: new RoundedRectangleBorder(
-          side: BorderSide(color: Colors.white),
-          borderRadius: BorderRadius.all(Radius.circular(50))),
-      icon: new Icon(Icons.star),
-      onPressed: () {
-        Snack.show(context, "666");
-      },
-      label: new Text('使用GitHub账号登录'));
+  return Container(
+    child: RaisedButton.icon(
+        color: Colors.white,
+        disabledColor: Colors.transparent,
+        shape: new RoundedRectangleBorder(
+            side: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.all(Radius.circular(50))),
+        icon: new Icon(Icons.star),
+        onPressed: () {
+          Fluttertoast.showToast(msg: "使用GitHub账号登录");
+        },
+        label: new Text(
+          '使用GitHub账号登录',
+          style: new TextStyle(
+              color: Colors.green, fontStyle: FontStyle.normal, fontSize: 16),
+        )),
+    width: double.infinity,
+    height: 50,
+  );
 }
 
 Widget _btnCreadeAccound(context) {
-  return RaisedButton.icon(
-      color: Colors.transparent,
-      disabledColor: Colors.transparent,
-      onPressed: () {
-        Snack.show(context, "777");
-      },
-      shape: new RoundedRectangleBorder(
-          side: BorderSide(color: Colors.white),
-          borderRadius: BorderRadius.all(Radius.circular(50))),
-      icon: new Icon(null),
-      label: new Text(
-        '创建账号',
-        style: new TextStyle(color: Colors.white, fontStyle: FontStyle.normal),
-      ));
+  return Container(
+    margin: new EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+    child: RaisedButton(
+        color: Colors.transparent,
+        disabledColor: Colors.transparent,
+        onPressed: () {
+          Fluttertoast.showToast(msg: "创建账号");
+        },
+        shape: new RoundedRectangleBorder(
+            side: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.all(Radius.circular(50))),
+        child: new Text(
+          '创建账号',
+          style: new TextStyle(
+              color: Colors.white, fontStyle: FontStyle.normal, fontSize: 16),
+        )),
+    width: double.infinity,
+    height: 50,
+  );
 }
 
 Widget weiboOR(String str) {

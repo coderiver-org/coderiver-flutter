@@ -39,3 +39,6 @@ flutter:
 
   assets:
       - images/logo.png
+      - images/github_icon.png
+      - images/silan_icon.png
+      - images/wechat_icon.png
