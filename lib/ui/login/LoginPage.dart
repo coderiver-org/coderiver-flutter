@@ -123,7 +123,7 @@ Widget _btnGithubLogin(context) {
 Widget _btnCreadeAccound(context) {
   return Container(
     margin: new EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
-    child: RaisedButton(
+    child: FlatButton(
         color: Colors.transparent,
         disabledColor: Colors.transparent,
         onPressed: () {
