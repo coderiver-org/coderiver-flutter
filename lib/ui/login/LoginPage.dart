@@ -63,8 +63,11 @@ class _MarketPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                      padding: EdgeInsets.all(10.0), child: weiboOR('新浪微博')),
-                  Padding(padding: EdgeInsets.all(20.0), child: weiboOR('微信')),
+                      padding: EdgeInsets.fromLTRB(0.0, 26.0, 0.0, 0.0),
+                      child: weiboOR('新浪微博')),
+                  Padding(
+                      padding: EdgeInsets.fromLTRB(20.0, 26.0, 0.0, 0.0),
+                      child: weChatOR('微信')),
                 ],
               )
               //_body(),
@@ -113,7 +116,7 @@ Widget _btnGithubLogin(context) {
         label: new Text(
           '使用GitHub账号登录',
           style: new TextStyle(
-              color: Colors.green, fontStyle: FontStyle.normal, fontSize: 16),
+              color: Colors.green, fontStyle: FontStyle.normal, fontSize: 20),
         )),
     width: double.infinity,
     height: 50,
@@ -135,7 +138,7 @@ Widget _btnCreadeAccound(context) {
         child: new Text(
           '创建账号',
           style: new TextStyle(
-              color: Colors.white, fontStyle: FontStyle.normal, fontSize: 16),
+              color: Colors.white, fontStyle: FontStyle.normal, fontSize: 20),
         )),
     width: double.infinity,
     height: 50,
@@ -143,11 +146,50 @@ Widget _btnCreadeAccound(context) {
 }
 
 Widget weiboOR(String str) {
-  return RaisedButton.icon(
-      color: Colors.white,
-      disabledColor: Colors.transparent,
-      icon: new Icon(Icons.star),
-      label: new Text(str,
-          style:
-              new TextStyle(color: Colors.white, fontStyle: FontStyle.normal)));
+  return Row(
+    children: <Widget>[
+      Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 0.0),
+          child: new Image.asset(
+            'images/silan_icon.png',
+          )),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 0.0),
+        child: new GestureDetector(
+            child: new Text(
+              str,
+              style: new TextStyle(
+                  color: Colors.white, fontStyle: FontStyle.normal),
+            ),
+            onTap: () {
+              Fluttertoast.showToast(msg: "微博登录");
+            }),
+      ),
+    ],
+  );
+}
+
+Widget weChatOR(String str) {
+  return Row(
+    children: <Widget>[
+      Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 0.0),
+        child: new Image.asset(
+          'images/wechat_icon.png',
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 0.0),
+        child: new GestureDetector(
+            child: new Text(
+              str,
+              style: new TextStyle(
+                  color: Colors.white, fontStyle: FontStyle.normal),
+            ),
+            onTap: () {
+              Fluttertoast.showToast(msg: "微信登录");
+            }),
+      ),
+    ],
+  );
 }

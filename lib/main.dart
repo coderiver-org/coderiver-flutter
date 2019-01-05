@@ -1,4 +1,6 @@
 import 'package:coderiver/ui/Application.dart';
+import 'package:coderiver/ui/home/HomePage.dart';
+import 'package:coderiver/ui/home/SplashPage.dart';
 import 'package:coderiver/ui/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 
@@ -9,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: LoginPage(),
-      )
+      home: new SplashPage(),
+      routes: <String, WidgetBuilder>{
+        // 路由
+        '/HomePage': (BuildContext context) => new LoginPage()
+      },
     );
   }
 }
-
