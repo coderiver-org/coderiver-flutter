@@ -9,29 +9,19 @@ class MinePage extends StatefulWidget {
   }
 }
 
-class _MinePageState extends State<MinePage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => null;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(GlobalConfig.homeTab),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: new Icon(Icons.assignment),
-              onPressed: () {},
-            )
-          ],
+    return new MaterialApp(
+        home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('想法'),
+            actions: <Widget>[new Container()],
+          ),
+          body: new Center(
+            child: new Text('想法'),
+          ),
         ),
-        body: Text(('开发中..')));
+        theme: GlobalConfig.themeData);
   }
 }

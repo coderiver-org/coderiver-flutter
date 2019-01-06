@@ -9,10 +9,15 @@ class GlobalConfig {
   static Color color_white_a80 = Color(0xccffffff);
   static Color color_blue = Color(0xcc0000ff);
 
+  static bool dark = false;
+  static ThemeData themeData = new ThemeData.light();
+  static Color searchBackgroundColor = Colors.white10;
+  static Color cardBackgroundColor = new Color(0xFF222222);
+  static Color fontColor = Colors.white30;
   ///导航
   static String homeTab = "首页";
-  static String secondTab = "二页";
-  static String thiredTab = "三页";
-  static String fourthTab = "四页";
-  static String fifthTab = "五页";
+  static String secondTab = "项目中心";
+  static String thiredTab = "";
+  static String fourthTab = "英雄广场";
+  static String fifthTab = "发现";
 }

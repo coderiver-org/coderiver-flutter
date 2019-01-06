@@ -1,15 +1,14 @@
 import 'package:coderiver/common/GlobalConfig.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SeconedPage extends StatefulWidget {
+class AddPage extends StatefulWidget {
+
   @override
-  State<StatefulWidget> createState() {
-    return _SeconedPageState();
-  }
+  _IdeaPageState createState() => new _IdeaPageState();
+
 }
 
-class _SeconedPageState extends State<SeconedPage> {
+class _IdeaPageState extends State<AddPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +16,18 @@ class _SeconedPageState extends State<SeconedPage> {
         home: new Scaffold(
           appBar: new AppBar(
             title: new Text('想法'),
-            actions: <Widget>[new Container()],
+            actions: <Widget>[
+              new Container(
+
+              )
+            ],
           ),
           body: new Center(
-            child: new Text('想法'),
+              child: null
           ),
         ),
-        theme: GlobalConfig.themeData);
+        theme: GlobalConfig.themeData
+    );
   }
+
 }

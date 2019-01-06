@@ -2,6 +2,10 @@ import 'package:coderiver/common/GlobalConfig.dart';
 import 'package:coderiver/common/ShowToast.dart';
 import 'package:coderiver/common/Snack.dart';
 import 'package:coderiver/common/color_const.dart';
+import 'package:coderiver/ui/Application.dart';
+import 'package:coderiver/ui/home/HomePage.dart';
+import 'package:coderiver/ui/login/LoginPhone.dart';
+import 'package:coderiver/ui/mine/RegisterNickNamePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -94,7 +98,7 @@ Widget _logText(context) {
           Navigator.push(
               context,
               new MaterialPageRoute(
-                  builder: (BuildContext context) => new LoginPage()));
+                  builder: (BuildContext context) => new LoginPhonePage()));
         },
       ),
     ),
@@ -111,7 +115,10 @@ Widget _btnGithubLogin(context) {
             borderRadius: BorderRadius.all(Radius.circular(50))),
         icon: new Icon(Icons.star),
         onPressed: () {
-          Fluttertoast.showToast(msg: "使用GitHub账号登录");
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (BuildContext context) => new ApplicationPage()));
         },
         label: new Text(
           '使用GitHub账号登录',
@@ -130,7 +137,11 @@ Widget _btnCreadeAccound(context) {
         color: Colors.transparent,
         disabledColor: Colors.transparent,
         onPressed: () {
-          Fluttertoast.showToast(msg: "创建账号");
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      new RegisterNickNamePage()));
         },
         shape: new RoundedRectangleBorder(
             side: BorderSide(color: Colors.white),
